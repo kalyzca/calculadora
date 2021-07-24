@@ -70,25 +70,32 @@ def funcionCapturarDato():
     lblResultado.configure(text = dato)
 
 lblNombre = Label(root, text="¿Cuál es tu nombre?", font=("Arial Bold", 10))
-lblNombre.grid(column=5, row=8)
+lblNombre.grid(column=5, row=9)
 # TextBox
 txt = Entry(root,width=20)
-txt.grid(column=5, row=9)
+txt.grid(column=5, row=10)
 
 btnMostrar = Button(root, text="Enviar", command=funcionCapturarDato)
-btnMostrar.grid(column=5, row=10)
+btnMostrar.grid(column=5, row=11)
 
 lblResultado = Label(root, text="", font=("Arial Bold", 10))
 lblResultado.grid(column=5, row=12)
 
-
-lblCombo = Label(root, text="¿Cuál es tu nombre?", font=("Arial Bold", 10))
-lblCombo.grid(column=5, row=8)
+lblCombo = Label(root, text="Seleccione una opción", font=("Arial Bold", 10))
+lblCombo.grid(column=0, row=13)
+lblSeleccion = Label(root, text="", font=("Arial Bold", 10))
+lblSeleccion.grid(column=0, row=16)
+def funcionCapturarCmb():
+    seleccion = "Usted seleccionó la opción " + combo.get()
+    lblSeleccion.configure(text = seleccion)
+btnCombo = Button(root, text="Mostrar Seleccion", command=funcionCapturarCmb)
+btnCombo.grid(column=0, row=15)
 #Combobox
-combo = Combobox(root)
+combo = Combobox(root,width=5)
 combo['values']= (1, 2, 3, 4, 5)
-combo.current(1) #seleccionar un elemento
-combo.grid(column=4, row=15)
+combo.current(1) #set the selected item
+combo.grid(column=0, row=14)
+
 
 
 # Finalmente bucle de la aplicación
