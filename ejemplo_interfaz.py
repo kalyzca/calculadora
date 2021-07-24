@@ -21,6 +21,9 @@ root.geometry('350x500')
 menubar = Menu(root)
 root.config(menu=menubar)
 
+#codigo para centrar la ventana, kaly
+root.eval('tk::PlaceWindow %s center' % root.winfo_pathname(root.winfo_id()))
+
 filemenu = Menu(menubar, tearoff=0)
 filemenu.add_command(label="Datos",command=funcionDatos) #Maria
 filemenu.add_command(label="IMC") #Yojahida
